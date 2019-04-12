@@ -160,6 +160,7 @@
 	position: fixed;
 	bottom: 0px;
 	width: 100%;
+	background-color: #006699;
 	line-height: 30px;	
 }
 .footer span:first-of-type{
@@ -264,4 +265,17 @@
 	display: block;
 	padding: 30px;
 	font-weight: bold;
+}
+.call h1{
+	color: #CE0000;
+	clear: both;
+	border-bottom: 2px dashed #EDEDED;
+	padding:20px 30px;
+}
+.call p{
+	text-align: left;
+	font-size: 25px;
+	margin-left: 30px;
+	border-bottom: 1px dashed #EDEDED;
+	line-height: 80px;
 }
