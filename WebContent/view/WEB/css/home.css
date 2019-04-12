@@ -50,7 +50,7 @@
 	color: white;
 	border: 2px solid white;
 }
-/*=======================================================涓诲尯鍩�?========================================*/
+/*=======================================================涓诲尯鍩�?========================================*/
 .first p{
 	color: #777777;
 	font-size: 20px;
@@ -78,7 +78,7 @@
 	line-height:45px;
 	color: #777777;
 }
-/*============================================================鏂伴�?=====================================================*/
+/*============================================================鏂伴�?=====================================================*/
 .new_title{
 	font-size:30px;
 	margin-top: 100px;
@@ -125,7 +125,7 @@
 	width: 200px;
 	margin:50px;
 }
-/*===============================================================================杞�?======================================================================*/
+/*===============================================================================杞�?======================================================================*/
 .item{
 	height: 800px;
 }
@@ -228,4 +228,40 @@
      float: right;
      margin-right: 30px;
 }
-	
+.project{
+	clear: both;
+	padding: 5px;
+	border-bottom: 3px dashed #EDEDED;
+	text-align: center;
+}
+.project h3{
+	text-align: center;
+	font-weight: bold;
+}
+.project p{
+	line-height:30px;
+	margin-top: 10px;
+	color: #8E8E8E;
+	/*width: 1200px;*/
+	font-size: 18px;
+	width: 50%;
+	display: inline-block;
+	text-align:center;
+	margin-bottom: 30px;
+}
+.project_title{
+	color: #CE0000;
+	padding: 5px;
+	clear: both;
+	border-bottom:2px dashed #EDEDED ;
+	margin-left: 20px;
+}
+.project img{
+	width:50%;
+	text-align: center;
+}
+.project span{
+	display: block;
+	padding: 30px;
+	font-weight: bold;
+}
