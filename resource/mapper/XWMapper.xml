@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.ldxx.dao.XWDao" >
+
+	<select id="getAllXW" resultType="org.ldxx.bean.XW">
+		select xw_id,xw_bt,xw_nr,xw_date,xw_picter from xw
+	</select>
+	
+	<insert id="addXW">
+		insert into xw (xw_id,xw_bt,xw_nr,xw_date,xw_picter) values(#{xw.xwId},#{xw.xwBt},#{xw.xwNr},#{xw.xwDate},#{xw.xwPicter})
+	</insert>
+
+	<delete id="deleteXW">
+		delete from xw where xw_id=#{id}
+	</delete>
+	
+	<update id="updateXWbyId">
+		update xw set xw_bt=#{xw.xwBt},xw_nr=#{xw.xwNr},xw_date=#{xw.xwDate},xw_picter=#{xw.xwPicter} where xw_id=#{xw.xwId}
+	</update>
+	
+	<select id="getlimitXW" resultType="org.ldxx.bean.XW">
+		select xw_id,xw_bt,xw_nr,xw_date,xw_picter from xw ORDER BY xw_date desc LIMIT #{num}
+	</select>
+
+</mapper>

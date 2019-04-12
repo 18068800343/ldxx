@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>棱点科技后台管理系统 </title>
+    <link href="../favicon.ico" rel="shortcut icon">
+	<link href="../style/bootstrap.min.css" rel="stylesheet">
+    <link href="../style/style.css" rel="stylesheet">
+    <link href="../toastr/toastr.css" rel="stylesheet">
+    <link rel="stylesheet" href="../font2/iconfont.css">
+    <link rel="stylesheet" href="../style/jquery.dataTables.min.css">
+    <style lang="">
+    	html {
+			overflow-x:hidden;
+			overflow-y:hidden;
+		}
+        *{
+            margin:0;
+            padding:0;
+            font-size: 1.6rem;
+        }
+        .w_nav2>li{
+        	margin-left:5%;
+        }
+        .w_nav2>li>a{
+            display:block;
+            box-sizing: border-box;
+            width:90%;
+            height:100%;
+            margin-left:5px;
+            /* padding-left:20px; */
+        }
+        .erjicaidan>div>a{
+        	
+        }
+        .w_nav3 li a{
+        	border:none;
+        	background:rgba(28,125,214,0.5);
+        	color:#fff;
+        	width:88%;
+        	margin-top:20px;
+        	margin-left:10px;
+        	border-left:5px solid #ffa800;
+        	padding-left:0;
+        	text-indent:12px;
+        	text-align:center;
+        }
+        .yihang{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        /* 四级菜单 */
+        .w_nav4  li{
+        	width:95%;
+            margin-left:5px;
+        }
+        .w_nav4  li a{
+            border-left:5px solid green;
+            padding:5px 5px;
+        }
+        .two li{
+            margin-left:5px;
+        }
+        .two li a{
+            border-left:5px solid green;
+        }
+        .second>li>a{
+        	border-left:5px solid white;
+        }
+        .nav-tabs li a{
+            color:#fff;
+        }
+        #toptab li :hover{
+        	background:#fff;
+        	color:#000;
+        }
+        .btn-lg{
+        	background:#cce8ff;
+        }
+        .yijicaidan{
+        	color:#1067ce;
+        	border:none;
+        	width:90%;
+        	margin-top:20px;
+        	box-shadow:0px 0px 2px #333333;
+    		/* background: linear-gradient(#ddf1ff, #add7ff); */
+        }
+        .yijicaidan :hover{
+        	
+        }
+        .btn.focus, .btn:focus{
+    		color: #fff;
+    		box-shadow:0px 0px 2px #333333;
+    		background: linear-gradient(#1e73d8, #02456e);
+		}
+		.btn:hover {
+    		background: #0465d7;
+    		 color:white;
+		}
+		.btn-group-lg>.btn, .btn-lg {
+		    padding: 10px 16px;
+		    font-size: 1.6rem;
+		    line-height: 1.3333333;
+		    border-radius: 6px;
+		}
+		#leftTab{
+			background-color:#0f66ab;
+			background-size:100% 100%;
+			color:#fff;
+			width:13%;
+			z-index:99;
+			height:85%;
+			position: absolute;
+			overflow-y: auto;
+			padding-bottom:100px;
+			box-shadow:1px 0px 10px #333333;
+		}
+		
+		@media screen and (max-height: 1080px) {
+		    #leftTab {
+		        height:100%;
+		    }
+		}
+		@media screen and (max-height: 1050px) {
+		    #leftTab {
+		        height:82.5%;
+		    }
+		}
+		@media screen and (max-height: 900px) {
+		    #leftTab {
+		        height:100%;
+		    }
+		}
+		
+		#rightTab{
+			width:87%;
+			height:84%;
+			position:absolute;
+			margin-left:13%;
+			overflow-y: hidden;
+			background:#fff;
+		}
+		@media screen and (max-height: 900px) {
+		    #rightTab {
+		        height:80%;
+		    }
+		}
+		@media screen and (max-height: 768px) {
+		    #rightTab {
+		        height:75%;
+		    }
+		}
+		
+		.lodingmsg{
+			color:white;
+			font-size:18px;
+			padding:5px;
+		}
+		.lodingmsg:hover{
+			background:skyblue;
+			cursor:pointer;
+			border-radius:3px;
+		}
+    </style>
+</head>
+<body>
+
+      <section>
+      <!-- header -->
+        <header class="header white-bg yihang2" style="background-color:#0b5288;background-size:100% 100%; ">
+            <div style="display:flex;align-items:center;">
+                <div class="logo-wrapper"  style="margin-top:5px;width:180px;height:60px;">
+                    <div style="margin-top:5px;margin-left:5px;">
+                        <a href="index.html">
+                            <img id="load"  src="img/公司logo.jpg" alt="..." style="width:30%;height:30%;cursor:pointer;padding-top:8px;">
+                        </a>
+                    </div>
+                </div>
+                <a class="logo" style="margin-left:-110px;padding-top:14px;color:white;font-size:32px;">棱点科技后台管理系统 </a>
+                <!-- <div class="sidebar-toggle-box" style="margin-left:12px;">
+                    <div data-original-title="Toggle Navigation" data-placement="right" class="iconfont icon-caidan" title="点击收缩侧边栏" style="cursor:pointer;font-size:24px;color:black;"></div>
+                </div> -->
+            </div>
+            <div style="display:flex;">
+            		<div id="omName"  onclick="tanchulai()"class="lodingmsg" ></div>&nbsp;&nbsp;&nbsp;
+            		<div onclick="exit()" id="tuichu" class="lodingmsg"></div>&nbsp;&nbsp;
+            </div>
+        </header>
+        <!-- banner -->
+        <!-- <div class="banner">
+            <div class="nowtime">
+                <div>
+                    <i class="iconfont icon-rili"></i>
+                    <p id="date"></p>
+                </div>
+            </div>
+        </div> -->
+        <!-- 顶部菜单 -->
+        
+        <!-- 修改Modal -->
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="change">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel"><b>修改密码</b></h4>
+        </div>
+        <div class="modal-body">
+                <div>
+                <table class="  table-condensed"  style="width:60%;margin:0 auto;">
+                		<tr>
+                			<td style="width:40%;"><span>原密码:</span></td>
+                			<td style="width:60%;">
+                					<input type="text" class="form-control"  id="old_password">
+                			</td>
+                		</tr>
+                		<tr>
+                			<td>
+                					<span>新密码:</span>   
+                			</td>
+                			<td>
+                					<input type="text" class="form-control"  id="new_password">
+                			</td>
+                		</tr>
+                		<tr>
+                			<td>
+                					<span>重新输入新密码:</span>
+                			</td>
+                			<td>
+                					<input type="text" class="form-control"  id="new_password2"> 
+                			</td>
+                		</tr>
+                </table>
+                    
+                </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            <button type="button" class="btn btn-success" onclick="save_new_password()">保存</button>
+        </div>
+        </div>
+    </div>
+</div>
+<!-- 修改model结束 -->
+        
+        <nav>
+            
+                <div>
+                    <!-- Nav tabs -->
+                    <div style="display:flex;">
+                        <!-- Tab panes -->
+                        <div class="tab-content"  id="leftTab">
+                            <div role="tabpanel" class="tab-pane active erjicaidan" id="gerenRenwu" style="padding-top:22px;">
+	                            <!-- <span style="margin-left:10px;font-size:18px;" class="Pa" ><i class="iconfont icon-yonghuguanli" style="font-size:18px;"></i>个人任务</span><br> -->
+	                            <div style="text-align:center;">
+	                            	<a href="./LeftMenu/anli.html"  target="view_frame" class="btn  btn-lg yijicaidan" role="button"  id="dbsxan"><span>案例管理</span></a>
+		                            <a href="./LeftMenu/xinwenzixun.html"  target="view_frame" class="btn  btn-lg yijicaidan" role="button"  id="ybsxan"><span>新闻资讯</span></a>
+		                            <a href="./LeftMenu/yewutixi.html" target="view_frame"  class="btn  btn-lg yijicaidan" role="button"  id="ywcban"><span>业务体系</span></a>
+		                            <a href="./LeftMenu/guanliyuan.html"  target="view_frame" class="btn  btn-lg yijicaidan" role="button"  id="ywbltzan"><span>管理员</span></a>
+	                            </div>
+                            </div>
+                        </div>
+                        <div  id="rightTab">
+                            <!-- 主題內容开始 -->
+                          
+                                <iframe name="view_frame" id="rightMain" src="./LeftMenu/anli.html"  frameborder="false" scrolling="auto" style="border: none;" width="100%" height=100% allowtransparency="true"></iframe>
+                         
+                            <!-- 主题内容结束 -->
+                        </div>
+                    </div>
+                </div>
+            
+          </nav>
+	    </section>
+
+	<script src="../js/jquery.js"></script>
+	<script src="../js/common-scripts.js"></script>
+	<script src="../js/jquery.dataTables.min.js"></script>
+	<script src="../js/main.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../toastr/toastr.js"></script>
+	<script type="text/javascript">
+	var user;
+	$(document).ready(function(){
+		$.ajax({
+    		type:"post",
+    		url:getContextPath()+"/login/getUser",
+    		data:{
+    		},
+    		success:function(json){
+    			user=json;
+    			if(json!=null &&json!=""){
+    				$("#omName").html(json.username)
+    				$("#tuichu").text("退出")
+    				
+    			}else{
+    				//$("#tuichu").text("登录")
+    				location.href = "./login.html";
+    			}
+    		}
+    	})
+    	
+	})
+	
+		$(function(){
+			var nowHeight=$(window).height();
+			$('.mian_iframe').height(nowHeight-65);
+        });
+        
+        var flag = true;
+        $('#hetongLvyue').click(function () {
+            if (flag) {
+                $(".w_nav4").slideDown();
+                flag = false;
+            } else {
+                $(".w_nav4").slideUp();
+                flag = true;
+            }
+        });
+        
+        $(".inactive1").siblings('ul').slideUp();
+        $(".inactive1").click(function(){
+    		if($(this).siblings('ul').css('display')=='none'){
+    			$(this).siblings('ul').slideDown(300);
+    			//下面的if是为了控制同级菜单中都有子菜单只能打开一个
+    			if ($(this).parents('li').siblings('li').children('ul').css('display') == 'block'){
+                        $(this).parents('li').siblings('li').children('ul').slideUp(300);
+    				console.log(4)
+                    }
+    		}else{	//控制自身菜单下子菜单隐藏
+    			$(this).siblings('ul').slideUp(300);
+    			//控制自身菜单下子菜单隐藏
+                $(this).siblings('ul').children('li').children('ul').slideUp(300);	
+    		}
+    								
+    	});
+        
+        /* var flagcj = true;
+        $(".w_nav4cj").slideUp();
+        $('#chengjiehetongguanli').click(function () {
+            if (flagcj==true) {
+                $(".w_nav4cj").slideDown();
+                $(".w_nav4fb").slideUp();
+                
+                $(".w_nav4cg").slideUp();
+                
+                flagcj = false;
+            } else {
+                $(".w_nav4cj").slideUp();
+                flagcj = true;
+            }
+        })
+        
+        
+        var flagfb = true;
+        $(".w_nav4fb").slideUp();
+        $('#fenbaohetongguanli').click(function () {
+            if (flagfb==true) {
+                $(".w_nav4fb").slideDown();
+                $(".w_nav4cj").slideUp();
+                
+                $(".w_nav4cg").slideUp();
+                
+                flagfb = false;
+            } else {
+                $(".w_nav4fb").slideUp();
+                flagfb = true;
+            }
+        })
+        
+        
+        var flagcg = true;
+        $(".w_nav4cg").slideUp();
+        $('#caigouhetongguanli').click(function () {
+            if (flagcg==true) {
+                $(".w_nav4cg").slideDown();
+                $(".w_nav4fb").slideUp();
+                
+                $(".w_nav4cj").slideUp();
+                
+                flagcg = false;
+            } else {
+                $(".w_nav4cg").slideUp();
+                flagcg = true;
+            }
+        }) */
+        var flag2 = true;
+        $(".w_nav4a").slideUp();
+        $('#hetongLvyue2').click(function () {
+            if (flag) {
+                $(".w_nav4a").slideDown();
+                flag = false;
+            } else {
+                $(".w_nav4a").slideUp();
+                flag = true;
+            }
+        });
+        var flag22 = true;
+        $(".w_nav4aa").slideUp();
+        $('#hetongLvyue22').click(function () {
+            if (flag) {
+                $(".w_nav4aa").slideDown();
+                flag = false;
+            } else {
+                $(".w_nav4aa").slideUp();
+                flag = true;
+            }
+        });
+       
+        $('.a').click(function() {
+            if ($(this).siblings('ul').css('display') == 'none') {
+                $(this).siblings('ul').slideDown(300).children('li');
+                if ($(this).parents('li').siblings('li').children('ul').css('display') == 'block') {
+                    $(this).parents('li').siblings('li').children('ul').slideUp(300);
+                }
+            } else {
+                //控制自身菜单下子菜单隐藏
+                $(this).siblings('ul').slideUp(300);
+                //控制自身菜单下子菜单隐藏
+                $(this).siblings('ul').children('li').children('ul').slideUp(300);
+            }
+        });
+        
+        $(".yijicaidan").click(function() {
+
+            $(".yijicaidan").removeClass('btn-primary');  // 删除其他兄弟元素的样式
+            //$(".yijicaidan").addClass('yijicaidan');
+            $(this).addClass('btn-primary');                            // 添加当前元素的样式
+
+        });
+        function htglClick(){
+        	$("#htgl").trigger("click");
+        	
+        	setTimeout("cjhtglClick()",3000);
+        }
+        function cjhtglClick(){
+        	$("#cjhtgl").trigger("click");
+        }
+        
+        //退出
+        function exit(){
+        	$.ajax({
+        		type:"post",
+        		url:getContextPath()+"/login/exit",
+        		async:false,
+        		data:{
+        		},
+        		success:function(json){
+        			localStorage.removeItem("obj");
+        			location.href = "./login.html";
+        		}
+        	})
+        }
+        
+        function tanchulai(){
+        	$("#old_password").val("")
+        	$("#new_password").val("")
+        	$("#new_password2").val("")
+        	$("#change").modal("show")
+        }
+        
+        function save_new_password(){
+        	var old_password=$("#old_password").val();
+        	var new_password=$("#new_password").val();
+        	var new_password2=$("#new_password2").val();
+        	if(new_password2!=new_password){
+        		toastr.error("两次输入新密码不一致");
+	    		return;
+        	}
+        	//console.log(user)
+        	var password=old_password+","+new_password
+        	 $.ajax({
+        		type:"post",
+        		url:getContextPath()+"/user/updatePasswordById",
+        		data:{
+        			userId:user.userId,
+        			password:password
+        		},
+        		success:function(json){
+        			if(json>0){
+        				toastr.success("修改成功")
+        				$("#change").modal("hide")
+        				location.href = "./login.html";
+        			}else if(json==-1){
+        				toastr.error("原密码不正确")
+        			}else if(json==-2){
+        				toastr.error("新密码与原密码请保持不一致")
+        			}
+        		}
+        	}) 
+        }
+        
+	</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+/*可以在这里添加你自己的css*/
+img {
+    width:496px;
+    height:331px;
+    border-radius:10px;
+} 
+body {
+    overflow-y:hidden !important;
+    overflow-x: hidden !important;
+    margin:0px;
+}
+.view {
+word-break: break-all;
+margin-top:-4px;
+}
+.vote_area {
+display: block;
+}
+.vote_iframe {
+background-color: transparent;
+border: 0 none;
+height: 100%;
+}
+#edui1_imagescale{display:none !important;} /*去除点击图片后出现的拉伸边框*/

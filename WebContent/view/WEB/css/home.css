@@ -1,0 +1,167 @@
+.logo{
+	width: 50px;
+}
+.logo_div{
+	margin-top: 14px;
+	margin-left: 15px;
+	display: inline-block;
+}
+.navigation{
+	float: right;
+	
+}
+.btn{
+	width: 130px;
+	border: none;
+	padding: 30px 0px;
+}
+/*========================================================banner==================================================*/
+.banner{
+	height:850px;
+	background-image: url(../img/timg.jpg);
+}
+.banner h1{
+	color: white;
+	font-size: 50px;
+	text-align:left;
+	margin-top: 200px;
+	margin-left: 150px;
+}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+.banner p{
+	color: white;
+	margin-left: 150px;
+	font-size: 20px;
+}
+.banner a{
+	height: 20px;
+	width: 200px;
+	line-height: 0px;
+	position: relative;
+	left: 130px;
+	top: 300px;
+	margin-left: 20px
+}
+.banner a:first-of-type{
+	background-color:transparent;
+	color: white;
+	border: 2px solid white;
+}
+/*=======================================================涓诲尯鍩�========================================*/
+.first p{
+	color: #777777;
+	font-size: 20px;
+	padding:30px;
+}
+.survey{
+	width: 500px;
+	display: inline-block;
+	border: 2px solid #5766b8;
+	border-radius:10px;
+	padding: 20px;
+	margin-left: 30px;
+	height: 500px;
+	vertical-align: middle;
+	padding-top: 80px;
+	box-shadow:1px 1px 7px;
+}
+.survey img{
+	height:30px;
+}
+.survey p{
+	font-size: 16px;
+	
+	margin-top: 15px;
+	line-height:45px;
+	color: #777777;
+}
+/*============================================================鏂伴椈=====================================================*/
+.new_title{
+	font-size:30px;
+	margin-top: 100px;
+	margin-bottom: 20px;
+}
+.newsdiv{
+	width: 500px;
+	display: inline-block;
+	border: 2px solid #5766b8;
+	border-radius:10px;
+	margin-left: 30px;
+	height: 510px;
+	vertical-align: middle;
+	box-shadow:1px 1px 7px;
+}
+.newsdiv img{
+	width: 496px;
+}
+.newdiv2{
+	margin-top: 30px;
+	margin-left: 10px;
+}
+.newdiv2 p:first-child{
+	color: #3f51b5;
+}
+.newdiv2 p:last-of-type{
+	color: #777777;
+}
+.ahref{
+	color: #ff9c09;
+	float: right;
+	margin-right: 20px;
+}
+
+.news{
+	text-align:center;
+}
+/*===============================================================================鍚堜綔浼佷笟=============================================================================*/
+.cooperative{
+	margin-top: 70px;
+	margin-bottom: 70px;
+}
+.cooperative_logo img{
+	width: 150px;
+	margin:50px;
+}
+/*===============================================================================杞挱======================================================================*/
+.item{
+	height: 800px;
+}
+.img-responsive{
+	width: 100%;
+}
+
+.carousel-inner{
+	border: 3px solid #5766b8;
+}
+.foot_logo{
+	width: 50px;
+	margin:20px;
+}
+.foot_a{
+	float: right;
+	margin: 30px;
+	margin-right: 300px;
+}
+.foot_a a{
+	margin:0px 50px;
+	color: #777777;
+}
+.foot_a img{
+	width: 30px;
+}
+.footer{
+	background-color: #3f51b5;
+	height: 30px;
+	clear: both;
+	color: white;
+	line-height: 30px;	
+}
+.footer span:first-of-type{
+	margin-left: 20px;
+}
+.footer span:last-of-type{
+	float: right;
+	margin-right: 20px;
+}
+.newsdiv1{
+	width: 300px;
+}
