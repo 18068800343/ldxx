@@ -41,5 +41,10 @@ public class XWServiceImpl implements XWService {
 		return dao.getlimitXW(num);
 	}
 
+	@Override
+	public XW getXWById(String id) {
+		return dao.getXWById(id);
+	}
+
 
 }

@@ -18,4 +18,6 @@ public interface XWDao {
 
 	List<XW> getlimitXW(@Param("num")int num);
 
+	XW getXWById(@Param("id")String id);
+
 }

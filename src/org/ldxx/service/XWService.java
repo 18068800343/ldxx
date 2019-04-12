@@ -17,5 +17,7 @@ public interface XWService {
 
 	List<XW> getlimitXW(int num);
 
+	XW getXWById(String id);
+
 
 }

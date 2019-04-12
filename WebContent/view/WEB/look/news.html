@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>棱点科技</title>
+		<link rel="stylesheet" type="text/css" href="../bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../bootstrap-3.3.7-dist/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="../css/home.css" />
+		<link rel="stylesheet" href="../../style/jquery.dataTables.min.css">
+		<style>
+			#edui1_iframeholder {
+				overflow-x: hidden;
+				overflow-y: hidden;
+			}
+			
+			.newsdiv {
+				height: 100%;
+			}
+			
+			.line-limit-length {
+				overflow: hidden;
+				text-overflow: ellipsis;
+				display: -webkit-box;
+				-webkit-box-orient: vertical;
+				-webkit-line-clamp: 3;
+			}
+			
+			#lookcontrainer0 img {
+				width: 496px;
+				height: 331px;
+			}
+			
+			#lookcontrainer1 img {
+				width: 496px;
+				height: 331px;
+			}
+			
+			#lookcontrainer2 img {
+				width: 496px;
+				height: 331px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="col-xs-12 head headbg">
+			<div class="logo_div">
+				<img src="../img/公司logo.jpg" / class="logo">
+			</div>
+			<div class="navigation">
+				<a href="index.html" class="btn btn2 btn-default">首页</a>
+				<a href="" class="btn btn2 btn-default">案例</a>
+				<a href="" class="btn btn2 btn-default">新闻资讯</a>
+				<a href="" class="btn btn2 btn-default">业务体系</a>
+				<a href="" class="btn btn2 btn-default">关于我们</a>
+			</div>
+		</div>
+		<!--banner-->
+		<!--新闻区-->
+		<!-- <p style="font-size:32px;">新闻资讯详情</p> -->
+		<div class="mianbao">
+	    	<ul class="breadcrumb">
+	    		<li><i class="iconfont icon-knowledgebase"></i></li>
+				<li style="font-size:25px;margin-top: 30px;color:#CE0000;">新闻资讯详情</li>
+				<li class="active"></li>
+			</ul>
+	    </div>
+		<div class="news_div">
+			<div class="newsdiv1">
+				<!-- <img src="../img/news.jpg" /> -->
+				<div id="picture"></div>
+				<div class="newnew">
+					<h3 id="bt"></h3>
+					<p id="nr" style="text-indent:2em"></p>
+					<span id="date" style="font-weight: bold;display:block;margin-right:30px; text-align:right;"></span>
+				</div>
+			</div>
+
+		</div>
+		<div class="foot  col-xs-12">
+			<img src="../img/公司logo.jpg" class="foot_logo" />
+			<div class="foot_a">
+				<a href="">关于我们</a>
+				<a href="">加入棱点</a>
+				<a href="">企业服务</a>
+				<a href="">联系我们</a>
+				<a href=""><img src="../img/sina.jpg" /></a>
+				<a href=""><img src="../img/vx.jpg" /></a>
+			</div>
+		</div>
+		<div class="footer footer2">
+		<span>Copyright 2016.All rights reserved.</span>
+		<span>China: +86 2 33 44 55 66    US: +11 222 333 444    support@shark.com</span>
+	</div>
+		<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/common-scripts.js"></script>
+		<script src="../../js/jquery.dataTables.min.js"></script>
+		<script src="../../toastr/toastr.js"></script>
+		<script src="../../js/SmartNotification.min.js"></script>
+		<script src="../../js/myTool.js"></script>
+	</body>
+	
+	
+<script>
+	$(document).ready( function () {
+		initTable();
+	} );
+	
+	//获取url传参
+    function getParam(paramName) { 
+        paramValue = "", isFound = !1; 
+        if (this.location.search.indexOf("?") == 0 && this.location.search.indexOf("=") > 1) { 
+            arrSource = unescape(this.location.search).substring(1, this.location.search.length).split("&"), i = 0; 
+            while (i < arrSource.length && !isFound) arrSource[i].indexOf("=") > 0 && arrSource[i].split("=")[0].toLowerCase() == paramName.toLowerCase() && (paramValue = arrSource[i].split("=")[1], isFound = !0), i++ 
+        } 
+        return paramValue == "" && (paramValue = null), paramValue 
+    } 
+    
+    var id=getParam("id");
+    console.log(id)
+    function initTable(){
+    	$.ajax({
+	        type: 'POST',
+	        url: getContextPath()+'/xw/getXWById',
+	        dataType: 'json',
+	        data: {
+	        	id:id,
+	        },
+	        success: function (json) {
+	        	$("#picture").after(json.xwPicter)
+	        	$("#bt").html(json.xwBt)
+	        	$("#nr").html(json.xwNr)
+	        	$("#date").html(json.xwDate)
+	        	}
+		    });
+    }
+    
+	</script>
+
+</html>

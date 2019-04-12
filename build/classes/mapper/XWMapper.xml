@@ -21,5 +21,9 @@
 	<select id="getlimitXW" resultType="org.ldxx.bean.XW">
 		select xw_id,xw_bt,xw_nr,xw_date,xw_picter from xw ORDER BY xw_date desc LIMIT #{num}
 	</select>
+	
+	<select id="getXWById" resultType="org.ldxx.bean.XW">
+		select xw_id,xw_bt,xw_nr,xw_date,xw_picter from xw where xw_id=#{id}
+	</select>
 
 </mapper>

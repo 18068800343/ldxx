@@ -28,6 +28,12 @@ public class XWController {
 		return service.getAllXW();
 	}
 	
+	@RequestMapping("/getXWById")
+	@ResponseBody
+	public XW getXWById(String id){
+		return service.getXWById(id);
+	}
+	
 	@RequestMapping("/getlimitXW")//只查最新几条数据
 	@ResponseBody
 	public List<XW> getlimitXW(int num){
