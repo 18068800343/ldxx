@@ -6,16 +6,8 @@ public class XW {
 	private String xwNr;
 	private String xwDate;
 	private String xwPicter;
-	private int xwState;//状态：0：不显示在主页；1：显示在主页
 	
 	
-	
-	public int getXwState() {
-		return xwState;
-	}
-	public void setXwState(int xwState) {
-		this.xwState = xwState;
-	}
 	public String getXwPicter() {
 		return xwPicter;
 	}
