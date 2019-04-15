@@ -130,7 +130,7 @@
 	        	id:id,
 	        },
 	        success: function (json) {
-	        	$("#picture").after(json.xwPicter)
+	        	$("#picture").html(json.xwPicter)
 	        	$("#bt").html(json.xwBt)
 	        	$("#nr").html(json.xwNr)
 	        	$("#date").html(json.xwDate)
