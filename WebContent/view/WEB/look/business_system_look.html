@@ -7,7 +7,6 @@
 		<link rel="stylesheet" type="text/css" href="../bootstrap-3.3.7-dist/css/bootstrap.min.css" />
 		<link rel="stylesheet" type="text/css" href="../bootstrap-3.3.7-dist/css/bootstrap.css" />
 		<link rel="stylesheet" type="text/css" href="../css/home.css" />
-		<link rel="stylesheet" href="../../style/jquery.dataTables.min.css">
 		<style>
 			#edui1_iframeholder {
 				overflow-x: hidden;
@@ -25,21 +24,15 @@
 				-webkit-box-orient: vertical;
 				-webkit-line-clamp: 3;
 			}
-			
-			#lookcontrainer0 img {
-				width: 496px;
-				height: 331px;
+			#picture p{
+				width:100%;
+			}
+			#picture img {
+				width:70%;
+				display:block;
+				margin:0 auto; 
 			}
 			
-			#lookcontrainer1 img {
-				width: 496px;
-				height: 331px;
-			}
-			
-			#lookcontrainer2 img {
-				width: 496px;
-				height: 331px;
-			}
 		</style>
 	</head>
 
@@ -56,29 +49,18 @@
 				<a href="" class="btn  btn2 btn-default">关于我们</a>
 			</div>
 		</div>
-		<!--banner-->
-		<!--新闻区-->
-		<!-- <p style="font-size:32px;">新闻资讯详情</p> -->
-		<div class="mianbao">
-	    	<ul class="breadcrumb">
-	    		<li><i class="iconfont icon-knowledgebase"></i></li>
-				<li style="font-size:25px;margin-top: 30px;color:#CE0000;">新闻资讯详情</li>
-				<li class="active"></li>
-			</ul>
-	    </div>
-		<div class="news_div">
-			<div class="newsdiv1">
-				<!-- <img src="../img/news.jpg" /> -->
-				<div id="picture"></div>
-				<div class="newnew">
-					<h3 id="bt"></h3>
-					<p id="nr" style="text-indent:2em"></p>
-					<span id="date" style="font-weight: bold;display:block;margin-right:30px; text-align:right;"></span>
-				</div>
-			</div>
-
+		<div class="project_title">
+			<h1>案例</h1>
 		</div>
-		<div class="foot  col-xs-12">
+		<!--主模块-->
+		<div class="project">
+			<h3 id="bt"></h3>
+			<p id="nr" style="text-indent:2em;width:70%;"></p>
+			<!-- <img src="../img/图片1 - 副本.png" /><span>图 1智能化桥涵检测系统首页</span>
+			<img src="../img/图片2 - 副本.png" /><span>图 2检测项目管理</span> -->
+			<div id="picture"></div>
+		</div>
+		<div class="foot col-xs-12">
 			<img src="../img/公司logo.jpg" class="foot_logo" />
 			<div class="foot_a">
 				<a href="">关于我们</a>
@@ -89,22 +71,16 @@
 				<a href=""><img src="../img/vx.jpg" /></a>
 			</div>
 		</div>
-		<div class="footer footer2">
-		<span>Copyright 2016.All rights reserved.</span>
-		<span>China: +86 2 33 44 55 66    US: +11 222 333 444    support@shark.com</span>
-	</div>
+		<div class="footer">
+			<span>Copyright 2016.All rights reserved.</span>
+			<span>China: +86 2 33 44 55 66    US: +11 222 333 444    support@shark.com</span>
+		</div>
 		<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="../../js/common-scripts.js"></script>
-		<script src="../../js/jquery.dataTables.min.js"></script>
-		<script src="../../toastr/toastr.js"></script>
-		<script src="../../js/SmartNotification.min.js"></script>
-		<script src="../../js/myTool.js"></script>
 	</body>
 	
-	
-<script>
+	<script>
 	$(document).ready( function () {
 		initTable();
 	} );
@@ -124,16 +100,16 @@
     function initTable(){
     	$.ajax({
 	        type: 'POST',
-	        url: getContextPath()+'/xw/getXWById',
+	        url: getContextPath()+'/anli/getanliById',
 	        dataType: 'json',
 	        data: {
 	        	id:id,
 	        },
 	        success: function (json) {
-	        	$("#picture").after(json.xwPicter)
-	        	$("#bt").html(json.xwBt)
-	        	$("#nr").html(json.xwNr)
-	        	$("#date").html(json.xwDate)
+	        	$("#picture").html(json.alPicture)
+	        	$("#bt").html(json.alBt)
+	        	$("#nr").html(json.alNr)
+	        	$("#date").html(json.alDate)
 	        	}
 		    });
     }

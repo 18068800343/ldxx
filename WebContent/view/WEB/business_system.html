@@ -1,65 +1,67 @@
 <!DOCTYPE html>
 <html>
-
 	<head>
 		<meta charset="utf-8" />
 		<title>棱点科技</title>
-		<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap.min.css" />
-		<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap.css" />
-		<link rel="stylesheet" type="text/css" href="css/home.css" />
+		<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="css/home.css"/>
+		<link rel="stylesheet" href="../style/jquery.dataTables.min.css">
 		<style>
-			#edui1_iframeholder {
-				overflow-x: hidden;
-				overflow-y: hidden;
+			#edui1_iframeholder{
+				overflow-x:hidden;
+				overflow-y:hidden;
 			}
-			
-			.newsdiv {
-				height: 100%;
+			.newsdiv{
+				height:100%;
 			}
-			
 			.line-limit-length {
-				overflow: hidden;
-				text-overflow: ellipsis;
-				display: -webkit-box;
-				-webkit-box-orient: vertical;
-				-webkit-line-clamp: 3;
+				overflow:hidden; 
+				text-overflow:ellipsis;
+				display:-webkit-box; 
+				-webkit-box-orient:vertical;
+				-webkit-line-clamp:3; 
 			}
-			
-			#lookcontrainer0 img {
-				width: 496px;
-				height: 331px;
-			}
-			
-			#lookcontrainer1 img {
-				width: 496px;
-				height: 331px;
-			}
-			
-			#lookcontrainer2 img {
-				width: 496px;
-				height: 331px;
-			}
+			#lookcontrainer0 img{
+				width:496px;
+   				height:331px;
+   			}
+   			#lookcontrainer1 img{
+				width:496px;
+   				height:331px;
+   			}
+   			#lookcontrainer2 img{
+				width:496px;
+   				height:331px;
+   			}
+   			#mainContent{
+   				font-size:20px;
+   				margin-left:30px;
+   				line-height:42px
+   			}
 		</style>
 	</head>
-
 	<body>
 		<div class="col-xs-12 head headbg">
 			<div class="logo_div">
-				<img src="img/公司logo.jpg" / class="logo">
+				<img src="img/公司logo.jpg"/ class="logo">
 			</div>
 			<div class="navigation">
 				<a href="index.html" class="btn btn2 btn-default">首页</a>
 				<a href="business_system.html" class="btn btn2 btn-default">案例</a>
 				<a href="new.html" class="btn btn2 btn-default">新闻资讯</a>
-				<a href="call.html" class="btn btn2 btn-default">联系我们	</a>
-				<a href="" class="btn  btn2 btn-default">关于我们</a>
+				<a href="call.html" class=" btn btn2 btn-default">联系我们</a>
+				<a href="" class="btn btn2 btn-default">关于我们</a>
 			</div>
 		</div>
-		<!--主模块-->
-		<div class="al">
-			<h1>案例</h1>
-		</div>
-		<div class="LowerPart">
+	<div class="new_li">
+		<h1>案例</h1>
+		<ul id="xwList">
+			<!-- <a href=""><li>晟泰公司多项改革汇“福地” 站稳市场赢红利<span>1992-12-31</span></li></a>
+			<a href=""><li>晟泰公司五个“坚定不移” 推动改革创新纵深发展<span>1992-12-31</span></li></a>--> 
+		</ul>
+	</div>
+	<div class="LowerPart">
             <table class="striped table-hover " id="mainContent">
                    <thead>
                     <tr>
@@ -72,24 +74,100 @@
                 </tbody> 
             </table>
         </div>
-		<div class="foot col-xs-12">
-			<img src="img/公司logo.jpg" class="foot_logo" />
-			<div class="foot_a">
-				<a href="">关于我们</a>
-				<a href="">加入棱点</a>
-				<a href="">企业服务</a>
-				<a href="">联系我们</a>
-				<a href=""><img src="img/sina.jpg" /></a>
-				<a href=""><img src="img/vx.jpg" /></a>
-			</div>
+	<div class="foot col-xs-12">
+		<img src="img/公司logo.jpg" class="foot_logo"/>
+		<div class="foot_a">
+			<a href="">关于我们</a>
+			<a href="">加入棱点</a>
+			<a href="">企业服务</a>
+			<a href="">联系我们</a>
+			<a href=""><img src="img/sina.jpg"/></a>
+			<a href=""><img src="img/vx.jpg"/></a>
 		</div>
-		<div class="footer">
-			<span>Copyright 2016.All rights reserved.</span>
-			<span>China: +86 2 33 44 55 66    US: +11 222 333 444    support@shark.com</span>
-		</div>
-		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
-		<script src="bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
-		<script src="bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
-	</body>
-
+	</div>
+	<div class="footer">
+		<span>Copyright 2016.All rights reserved.</span>
+		<span>China: +86 2 33 44 55 66    US: +11 222 333 444    support@shark.com</span>
+	</div>
+<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+<script src="bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+<script src="bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery.dataTables.min.js"></script>
+</body>
+<script>
+    $(document).ready( function () {
+        initTable();
+	});
+    
+    var table=$('#mainContent').dataTable({
+    	"deferRender": true,
+        "processing": true,
+        "bDestroy": true,
+        "iDisplayLength": 10,
+        "searching": false,
+        "lengthChange": false,
+        "oLanguage": {
+    	    "sSearch": '<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>'
+    	},
+    	"columns": [
+    	            { "data": null},
+    	            { "data": null}, 
+    	            { "data": "alDate"}, 
+    	        ],
+    	        "columnDefs": [
+			    	        	{	
+									  "class": "tcenter",
+									  "targets":1,
+									  "searchable": true,
+									  "render": function(data, type, full) {
+											return '<a href="look/business_system_look.html?id='+data.alId+'" style="color:black;">'+data.alBt+'</a>';
+									  }
+								},
+    	        ],
+     "order": [[2, 'desc']],
+        "oLanguage": { //国际化配置
+        "sProcessing": "正在获取数据，请稍后...",
+        "sLengthMenu": "显示 _MENU_ 条",
+        "sZeroRecords": "查询不到相关数据",
+        "sInfo": "从 _START_ 到  _END_ 条记录 总记录数为 _TOTAL_ 条",
+        "sInfoEmpty": "记录数为0",
+        "sInfoFiltered": "(全部记录数 _MAX_ 条)",
+        "sInfoPostFix": "",
+        "sSearch": "搜索",
+        "sUrl": "",
+        "oPaginate": {
+            "sFirst": "第一页",
+            "sPrevious": "上一页",
+            "sNext": "下一页",
+            "sLast": "最后一页"
+        }},
+        "fnDrawCallback"  : function(){
+          　　this.api().column(0).nodes().each(function(cell, i) {
+          　　　　cell.innerHTML =  i + 1;
+          　  　});
+          }
+    });
+    
+    function initTable(){
+    	$.ajax({
+            type: 'POST',
+            url: getContextPath()+'/anli/getAllanli',
+            dataType: 'json',
+            data: {
+            },
+            success: function (json) {
+            	 /* if(json!=null){
+            		var num=json.length;
+            		for(var i=0;i<json.length;i++){
+            			$("#xwList").after('<a href="look/news.html?id='+json[i].xwId+'"><li><i style="display:inline-block;padding-left:30px;padding-right:10px;">'+(num-i)+'</i>'+json[i].xwBt+'<span>'+json[i].xwDate+'</span></li></a>');
+            			
+            		}
+            	}  */
+            	$('#mainContent').dataTable().fnClearTable();
+                $('#mainContent').DataTable().rows.add(json).draw(false); 
+            }
+      });
+    }
+    
+</script>
 </html>
