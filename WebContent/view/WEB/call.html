@@ -50,12 +50,12 @@
 		</div>
 	<div class="call">
 		<h1>联系我们</h1>
-		<p>电话:68931137</p>
-		<p>手机:139518212121</p>
-		<p>网址：<a href="">http://www.cisdigroup.com.cn/</a></p>
-		<p>E-MAIL：jinxjinx1024@163.com</p>
-		<p>地址:南京秦淮区XX16号</p>
-		<p>邮编:123121</p>
+		<p id="dianhua"></p>
+		<p id="shouji"></p>
+		<p>网址：<a id="wangzhi" href=""></a></p>
+		<p id="email"></p>
+		<p id="dizhi"></p>
+		<p id="youbian"></p>
 	</div>
 	<div class="footer">
 		<span>Copyright 2016.All rights reserved.</span>
@@ -65,4 +65,32 @@
 <script src="bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
 <script src="bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 </body>
+<script>
+    $(document).ready( function () {
+        initTable();
+	});
+    
+    function initTable(){
+    	$.ajax({
+            type: 'POST',
+            url: getContextPath()+'/lx/getLx',
+            dataType: 'json',
+            data: {
+            },
+            success: function (json) {
+            	 if(json!=null){
+            		 for(var i=0;i<json.length;i++){
+            			 $("#dianhua").html("电话: "+json[i].lxDianhua)
+            			 $("#shouji").html("手机: "+json[i].lxShouji)
+            			 $("#wangzhi").html("网址: "+json[i].lxWangzhi)
+            			 $("#email").html("E-mail: "+json[i].lxEmail)
+            			 $("#dizhi").html("地址: "+json[i].lxDizhi)
+            			 $("#youbian").html("邮编: "+json[i].lxYoubian)
+            		 }
+            	 }
+            }
+      });
+    }
+    
+</script>
 </html>
