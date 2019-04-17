@@ -281,3 +281,23 @@
 	border-bottom: 1px dashed #EDEDED;
 	line-height: 80px;
 }
+.about p{
+	font-size: 20px;
+	width: 50%;
+	margin-bottom: 30px;
+	color: #6c6c6c;
+}
+.about{
+	border: 2px solid #006DCC;
+	clear: both;
+	padding: 20px;
+}
+.about img{
+	float: right;
+}
+.about h1{
+	margin-bottom: 30px;
+	color: #AC2925;
+	border-bottom: 2px dashed #EDEDED;
+	padding-bottom: 20px;
+}
