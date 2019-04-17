@@ -283,7 +283,7 @@
 }
 .about p{
 	font-size: 15px;
-	width: 50%;
+	/* width: 50%; */
 	margin-bottom: 30px;
 	color: #6c6c6c;
 }
