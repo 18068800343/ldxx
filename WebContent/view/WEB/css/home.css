@@ -22,7 +22,9 @@
 /*========================================================banner==================================================*/
 .banner{
 	height:850px;
-	background-image: url(../img/timg.jpg);
+	background-image: url(../img/banner4.jpg);
+	background-size:2000px;
+	background-repeat:no-repeat ;
 }
 .banner h1{
 	color: white;
