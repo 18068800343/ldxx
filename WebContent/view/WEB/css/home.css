@@ -282,7 +282,7 @@
 	line-height: 80px;
 }
 .about p{
-	font-size: 20px;
+	font-size: 15px;
 	width: 50%;
 	margin-bottom: 30px;
 	color: #6c6c6c;
@@ -293,6 +293,7 @@
 	padding: 20px;
 }
 .about img{
+	/*float: right;*/
 	float: right;
 }
 .about h1{
