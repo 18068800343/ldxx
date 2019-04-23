@@ -27,7 +27,7 @@
 .banner{
 	height:850px;
 	background-image: url(../img/banner4.jpg);
-	background-size:2000px;
+	background-size:100%;
 	background-repeat:no-repeat ;
 }
 .banner h1{
