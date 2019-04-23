@@ -25,10 +25,12 @@
 }
 /*========================================================banner==================================================*/
 .banner{
-	height:850px;
-	background-image: url(../img/banner4.jpg);
+	/*height:850px;*/
+	/*background-image: url(../img/banner4.jpg);
 	background-size:100%;
-	background-repeat:no-repeat ;
+	background-repeat:no-repeat ;*/
+	position: absolute;
+	z-index: 3;
 }
 .banner h1{
 	color: white;
@@ -36,6 +38,7 @@
 	text-align:left;
 	margin-top: 200px;
 	margin-left: 150px;
+	
 }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
 .banner p{
 	color: white;
@@ -307,4 +310,7 @@
 	color: #AC2925;
 	border-bottom: 2px dashed #EDEDED;
 	padding-bottom: 20px;
+}
+#myCarousel img{
+	width: 100%;
 }
